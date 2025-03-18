@@ -1,19 +1,18 @@
 <template>
-    <H1>Hello World!</H1>
   <div id="Wapp">
-    <main>
-      <section class="search">
-        <input type="text"
-               placeholder="Zoek op locatie"
-               v-model="query"
-               @keypress="getWeather"
-        >
-      </section>
-      {{ query }}
-          <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+    <H1>Weather app</H1>
+    <div class="search">
+      <input type="text"
+             placeholder="Zoek op locatie"
+             v-model="query"
+             @keypress="getWeather"
+      >
+    </div>
+    <section>
+      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
       <div class="weather-widget" v-if="typeof weather.main != 'undefined'">
         <div class="weather-widget__location">
-          <h2 class="weather-widget__city">{{weather.name}}, {{ weather.sys.country }}</h2>
+          <h2 class="weather-widget__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
           <p class="weather-widget__date">{{ currentDate }}</p>
         </div>
         <div class="weather-widget__conditions">
@@ -25,10 +24,9 @@
           </div>
         </div>
       </div>
-    </main>
+    </section>
   </div>
 </template>
-
 <script>
 export default {
   name: 'Wapp',
@@ -62,32 +60,6 @@ export default {
         }
       }
     },
-    // async getWeather(e) {: Dit definieert een asynchrone methode genaamd getWeather die een event e als parameter accepteert.
-    // if (e.key === 'Enter') {: Deze conditie controleert of de ingedrukte toets de Enter-toets is.
-    //     try {: Start een try-block om eventuele fouten op te vangen.
-    //     const response = await fetch(...):
-    //   Maakt een API-verzoek naar een weer-service.
-    //       await wacht tot het verzoek is voltooid voordat verdergegaan wordt.
-    //       De URL wordt samengesteld met this.url_base, this.query (waarschijnlijk de ingevoerde stad), en this.api_key.
-    //   if (!response.ok) {: Controleert of de API-respons succesvol was.
-    //       throw new Error('Geen weer gegevens gevonden')
-    //       Als de respons niet ok is, wordt een fout gegenereerd.
-    //       const data = await response.json();: Zet de API-respons om naar JSON-formaat.
-    //   this.setResults(data);: Roept een methode aan om de weergegevens in de component op te slaan.
-    //   } catch (error) {: Vangt eventuele fouten op die tijdens het proces zijn opgetreden.
-    //   console.error('Error fetching weather data:', error)
-    //   Logt eventuele fouten naar de console.
-//
-//     Het gebruik van const in deze code is een goede praktijk om verschillende redenen:
-// Onveranderlijkheid: const zorgt ervoor dat de variabele niet opnieuw kan worden toegewezen. Dit helpt onbedoelde wijzigingen te voorkomen.
-//     Duidelijkheid: Het gebruik van const geeft aan dat de waarde van de variabele niet zal veranderen binnen het huidige blok, wat de code leesbaarder maakt.
-//     Prestaties: In sommige gevallen kan het gebruik van const kleine prestatieverbeteringen opleveren, omdat de JavaScript-engine weet dat de variabele niet zal veranderen.
-//     Foutpreventie: Het voorkomt per ongeluk hergebruik van variabelenamen, wat tot onverwacht gedrag kan leiden.
-//     Best practice: Het is een algemeen aanvaarde best practice in moderne JavaScript om const te gebruiken voor variabelen die niet opnieuw worden toegewezen.
-//     In deze specifieke code:
-//     const response: De response van de fetch-belofte wordt eenmalig toegewezen en niet meer gewijzigd.
-//     const data: De geparseerde JSON-data wordt eenmalig toegewezen en niet meer gewijzigd.
-    
     translateWeather(englishTerm) {
       const translations = {
         'Clear': 'Helder',
@@ -99,7 +71,29 @@ export default {
         'Mist': 'Mist',
         'Fog': 'Mist',
         'Haze': 'Nevel',
-        // Voeg meer vertalingen toe indien nodig
+        'Smoke': 'Rook',
+        'Dust': 'Stof',
+        'Sand': 'Zand',
+        'Ash': 'As',
+        'Squall': 'Windvlaag',
+        'Tornado': 'Tornado',
+        'Few clouds': 'Licht bewolkt',
+        'Scattered clouds': 'Verspreide wolken',
+        'Broken clouds': 'Gebroken bewolking',
+        'Overcast clouds': 'Zwaar bewolkt',
+        'Light rain': 'Lichte regen',
+        'Moderate rain': 'Matige regen',
+        'Heavy rain': 'Zware regen',
+        'Freezing rain': 'IJzel',
+        'Light snow': 'Lichte sneeuw',
+        'Heavy snow': 'Zware sneeuw',
+        'Sleet': 'Natte sneeuw',
+        'Shower rain': 'Regenbuien',
+        'Shower snow': 'Sneeuwbuien',
+        'Shower sleet': 'Natte sneeuwbuien',
+        'Thunderstorm with light rain': 'Onweer met lichte regen',
+        'Thunderstorm with heavy rain': 'Onweer met zware regen',
+        'Thunderstorm with snow': 'Onweer met sneeuw'
       };
       return translations[englishTerm] || englishTerm;
     },
@@ -109,3 +103,4 @@ export default {
   }
 }
 </script> 
+
