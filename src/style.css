@@ -28,6 +28,22 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: linear-gradient(
+              15deg,
+              hsl(214deg 53% 41%) 2%,
+              hsl(206deg 73% 39%) 19%,
+              hsl(200deg 100% 35%) 32%,
+              hsl(199deg 100% 37%) 43%,
+              hsl(196deg 100% 38%) 53%,
+              hsl(194deg 100% 39%) 62%,
+              hsl(192deg 100% 40%) 70%,
+              hsl(189deg 100% 40%) 76%,
+              hsl(186deg 100% 40%) 83%,
+              hsl(183deg 100% 40%) 88%,
+              hsl(179deg 100% 40%) 93%,
+              hsl(176deg 100% 42%) 97%,
+              hsl(170deg 72% 56%) 100%
+  );
 }
 
 h1 {
