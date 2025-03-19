@@ -1,7 +1,7 @@
 <template>
   <div class="weather" id="Wapp">
     <section class="weather__form">
-    <H1>Weather app</H1>
+    <H1 class="weather__title">Weather app</H1>
     <div class="weather__search">
       <input type="text"
              placeholder="Zoek op locatie"
