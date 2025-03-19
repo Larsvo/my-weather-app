@@ -13,30 +13,30 @@
 
 body {
 	margin: 0;
-	display: grid;
-	place-content: center;
-	min-width: 320px;
-	min-height: 100vh;
 	background-image: linear-gradient(
 									15deg,
-									hsl(214deg 53% 41%) 2%,
-									hsl(206deg 73% 39%) 19%,
-									hsl(200deg 100% 35%) 32%,
-									hsl(199deg 100% 37%) 43%,
-									hsl(196deg 100% 38%) 53%,
-									hsl(194deg 100% 39%) 62%,
-									hsl(192deg 100% 40%) 70%,
-									hsl(189deg 100% 40%) 76%,
-									hsl(186deg 100% 40%) 83%,
-									hsl(183deg 100% 40%) 88%,
-									hsl(179deg 100% 40%) 93%,
-									hsl(176deg 100% 42%) 97%,
+									hsl(319deg 60% 35%) 2%,
+									hsl(302deg 41% 38%) 19%,
+									hsl(276deg 35% 47%) 32%,
+									hsl(249deg 38% 55%) 43%,
+									hsl(224deg 53% 56%) 53%,
+									hsl(208deg 72% 49%) 62%,
+									hsl(201deg 100% 44%) 70%,
+									hsl(197deg 100% 45%) 76%,
+									hsl(194deg 100% 45%) 83%,
+									hsl(189deg 100% 44%) 88%,
+									hsl(184deg 100% 42%) 93%,
+									hsl(178deg 100% 42%) 97%,
 									hsl(170deg 72% 56%) 100%
 	);
+	> .app {
+		display: grid;
+		place-content: center;
+		min-width: 320px;
+		min-height: 100vh;
+	}
 }
-#app {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
+*::selection {
+	color: var(--white);
+	background-color: var(--main-color);
 }

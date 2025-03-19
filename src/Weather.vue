@@ -1,3 +1,7 @@
+<script setup>
+import { computed } from 'vue';
+
+</script>
 <template>
   <div class="weather" id="Wapp">
     <section class="weather__form">
@@ -9,6 +13,8 @@
              class="weather__search"
       >
       <div class="weather__widget" v-if="typeof weather.main != 'undefined'">
+        <WeatherIcon :condition="weather.weather[0].main" :key="weather.weather[0].main" />
+        <div class="weather__body">
         <div class="weather__location">
           <h2 class="weather__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
           <p class="weather__date">{{ currentDate }}</p>
@@ -21,15 +27,22 @@
             {{ translateWeather(weather.weather[0].main) }}
           </div>
         </div>
+        </div>
       </div>
     </section>
   </div>
 </template>
 <style lang="scss">
+@import "@/assets/Styles/01-base/variables.scss";
 @import "@/assets/Styles/02-components/widget.scss";
 </style>
 <script>
+import WeatherIcon from "@/components/WeatherIcon.vue";
+
 export default {
+  components: {
+    WeatherIcon,
+  },
   name: 'Wapp',
   data() {
     return {
@@ -61,6 +74,7 @@ export default {
         }
       }
     },
+
     translateWeather(englishTerm) {
       const translations = {
         'Clear': 'Helder',
