@@ -20,9 +20,7 @@ git clone https://github.com/Larsvo/my-weather-app.git
 cd weather-app
 npm install
 
-Create a .env file in the root directory and add your OpenWeatherMap API key:
-text
-VITE_OPENWEATHER_API_KEY=your_api_key_here
+change the OpenWeatherMap API key:
 
 Development
 To run the app in development mode with hot-reload:
