@@ -1,15 +1,14 @@
 <template>
-  <div id="Wapp">
+  <div class="weather" id="Wapp">
+    <section class="weather__form">
     <H1>Weather app</H1>
-    <div class="search">
+    <div class="weather__search">
       <input type="text"
              placeholder="Zoek op locatie"
              v-model="query"
              @keypress="getWeather"
       >
     </div>
-    <section>
-      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
       <div class="weather-widget" v-if="typeof weather.main != 'undefined'">
         <div class="weather-widget__location">
           <h2 class="weather-widget__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
@@ -27,6 +26,9 @@
     </section>
   </div>
 </template>
+<style lang="scss">
+@import "@/assets/Styles/widget.scss";
+</style>
 <script>
 export default {
   name: 'Wapp',
