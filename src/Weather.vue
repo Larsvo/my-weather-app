@@ -5,7 +5,7 @@ import { computed } from 'vue';
 <template>
   <div class="weather" id="Wapp">
     <section class="weather__form">
-      <H1 class="weather__title">Weather app</H1>
+      <H1 class="weather__title">Forecast Friend</H1>
       <input type="text"
              placeholder="Zoek op locatie"
              v-model="query"
