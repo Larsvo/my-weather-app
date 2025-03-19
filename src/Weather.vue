@@ -1,24 +1,23 @@
 <template>
   <div class="weather" id="Wapp">
     <section class="weather__form">
-    <H1 class="weather__title">Weather app</H1>
-    <div class="weather__search">
+      <H1 class="weather__title">Weather app</H1>
       <input type="text"
              placeholder="Zoek op locatie"
              v-model="query"
              @keypress="getWeather"
+             class="weather__search"
       >
-    </div>
-      <div class="weather-widget" v-if="typeof weather.main != 'undefined'">
-        <div class="weather-widget__location">
-          <h2 class="weather-widget__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
-          <p class="weather-widget__date">{{ currentDate }}</p>
+      <div class="weather__widget" v-if="typeof weather.main != 'undefined'">
+        <div class="weather__location">
+          <h2 class="weather__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
+          <p class="weather__date">{{ currentDate }}</p>
         </div>
-        <div class="weather-widget__conditions">
-          <div class="weather-widget__temperature">
+        <div class="weather__conditions">
+          <div class="weather__temperature">
             {{ Math.round(weather.main.temp) }}°c
           </div>
-          <div class="weather-widget__description">
+          <div class="weather__description">
             {{ translateWeather(weather.weather[0].main) }}
           </div>
         </div>
@@ -27,7 +26,7 @@
   </div>
 </template>
 <style lang="scss">
-@import "@/assets/Styles/widget.scss";
+@import "@/assets/Styles/02-components/widget.scss";
 </style>
 <script>
 export default {
