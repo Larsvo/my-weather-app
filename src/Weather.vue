@@ -15,17 +15,17 @@ import { computed } from 'vue';
       <div class="weather__widget" v-if="typeof weather.main != 'undefined'">
         <WeatherIcon :condition="weather.weather[0].main" :key="weather.weather[0].main" />
         <div class="weather__body">
-        <div class="weather__location">
-          <h2 class="weather__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
-          <p class="weather__date">{{ currentDate }}</p>
-        </div>
         <div class="weather__conditions">
           <div class="weather__temperature">
-            {{ Math.round(weather.main.temp) }}°c
+            {{ Math.round(weather.main.temp) }}&deg;c
           </div>
           <div class="weather__description">
             {{ translateWeather(weather.weather[0].main) }}
           </div>
+        <div class="weather__location">
+          <h2 class="weather__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
+          <p class="weather__date">{{ currentDate }}</p>
+        </div>
         </div>
         </div>
       </div>
