@@ -9,6 +9,16 @@ export default defineConfig({
       vue(),
     svgLoader(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+       
+      }
+    }
+  },
+  build: {
+    cssCodeSplit: false
+  },
   server: {
     host: true // or '0.0.0.0'
   },

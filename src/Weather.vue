@@ -55,7 +55,6 @@ import {computed} from 'vue';
   </div>
 </template>
 <style lang="scss">
-@use "@/assets/Styles/01-base/variables.scss";
 @use "@/assets/Styles/03-components/widget.scss";
 </style>
 <script>
