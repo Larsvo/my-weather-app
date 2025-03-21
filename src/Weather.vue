@@ -55,8 +55,8 @@ import {computed} from 'vue';
   </div>
 </template>
 <style lang="scss">
-@import "@/assets/Styles/01-base/variables.scss";
-@import "@/assets/Styles/02-components/widget.scss";
+@use "@/assets/Styles/01-base/variables.scss";
+@use "@/assets/Styles/02-components/widget.scss";
 </style>
 <script>
 import WeatherIcon from "@/components/WeatherIcon.vue";

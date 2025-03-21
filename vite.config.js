@@ -9,7 +9,9 @@ export default defineConfig({
       vue(),
     svgLoader(),
   ],
-  
+  server: {
+    host: true // or '0.0.0.0'
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

@@ -25,9 +25,7 @@ change the OpenWeatherMap API key:
 Development
 To run the app in development mode with hot-reload:
 
-npm run dev
-
-Open your browser and navigate to http://localhost:5173 to view the app.
+vite --host
 
 Building for Production
 To build the app for production:
