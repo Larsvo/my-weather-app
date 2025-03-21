@@ -30,8 +30,7 @@ To run the app in development mode with hot-reload:
 Building for Production
 To build the app for production:
 
-`npm run build`
-
+`npm run build` 
 This will generate a dist folder with your production-ready assets.
 Serving the Production Build
 To preview the production build locally:
