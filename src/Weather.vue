@@ -1,34 +1,36 @@
 <script setup>
-import { computed } from 'vue';
+import {computed} from 'vue';
 
 </script>
 <template>
   <div class="weather" id="Wapp">
     <section class="weather__form">
       <H1 class="weather__title">Forecast Friend</H1>
-      <input type="text"
-             placeholder="Zoek op locatie"
-             v-model="query"
-             @keypress="getWeather"
-             class="weather__search"
-      >
-      <div class="weather__widget" v-if="typeof weather.main != 'undefined'">
-        <WeatherIcon :condition="weather.weather[0].main" :key="weather.weather[0].main" />
-        <div class="weather__body">
-        <div class="weather__conditions">
-          <div class="weather__temperature">
-            {{ Math.round(weather.main.temp) }}&deg;c
+      <form @submit.prevent="getWeather">
+        <input type="text"
+               placeholder="Zoek op locatie"
+               v-model="query"
+               class="weather__search"
+        >
+        <button type="submit">Zoeken</button>
+        <div class="weather__widget" v-if="typeof weather.main != 'undefined'">
+          <WeatherIcon :condition="weather.weather[0].main" :key="weather.weather[0].main"/>
+          <div class="weather__body">
+            <div class="weather__conditions">
+              <div class="weather__temperature">
+                {{ Math.round(weather.main.temp) }}&deg;c
+              </div>
+              <div class="weather__description">
+                {{ translateWeather(weather.weather[0].main) }}
+              </div>
+              <div class="weather__location">
+                <h2 class="weather__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
+                <p class="weather__date">{{ currentDate }}</p>
+              </div>
+            </div>
           </div>
-          <div class="weather__description">
-            {{ translateWeather(weather.weather[0].main) }}
-          </div>
-        <div class="weather__location">
-          <h2 class="weather__city">{{ weather.name }}, {{ weather.sys.country }}</h2>
-          <p class="weather__date">{{ currentDate }}</p>
         </div>
-        </div>
-        </div>
-      </div>
+      </form>
     </section>
   </div>
 </template>
@@ -60,18 +62,19 @@ export default {
     }
   },
   methods: {
-    async getWeather(e) {
-      if (e.key === 'Enter') {
-        try {
-          const response = await fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`);
-          if (!response.ok) {
-            throw new Error('Geen weer gegevens gevonden');
-          }
-          const data = await response.json();
-          this.setResults(data);
-        } catch (error) {
-          console.error('Error fetching weather data:', error);
+    async getWeather() {
+      try {
+        const response = await fetch(`${this.url_base}weather?q=${encodeURIComponent(this.query)}&units=metric&APPID=${this.api_key}`);
+        if (!response.ok) {
+          throw new Error('Geen weer gegevens gevonden');
         }
+        const data = await response.json();
+        this.setResults(data);
+        this.errorMessage = ''; // Reset eventuele eerdere foutmeldingen
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        this.errorMessage = 'Fout bij het ophalen van weergegevens';
+        this.weather = {}; // Reset weerdata bij een fout
       }
     },
 
