@@ -1,4 +1,4 @@
-Weather App
+**Weather App**
 
 This is a Vue.js weather application built with Vite, providing real-time weather information using the OpenWeatherMap API.
 Features
@@ -13,31 +13,38 @@ Before you begin, ensure you have the following installed:
 Node.js (version 14.0 or higher)
 npm (usually comes with Node.js)
 
-Installation
+**Installation**
+
 Clone the repository:
 
-`git clone https://github.com/Larsvo/my-weather-app.git
-cd weather-app
-npm install`
+`git clone https://github.com/Larsvo/my-weather-app.git`
+
+`cd weather-app`
+
+`npm install`
 
 change the OpenWeatherMap API key:
 
-Development
+**Development**
+
 To run the app in development mode with hot-reload:
 
-`vite --host
-`
-Building for Production
+`vite --host`
+
+**Building for Production**
+
 To build the app for production:
 
 `npm run build` 
+
 This will generate a dist folder with your production-ready assets.
 Serving the Production Build
 To preview the production build locally:
 
 `npm run preview`
 
-Usage
+**Usage**
+
 Enter a city name in the search bar
 Press enter or click the search button
 View the current weather conditions for the specified city
