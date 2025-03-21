@@ -11,7 +11,9 @@ export default defineConfig({
     ],
     css: {
         preprocessorOptions: {
-            scss: {}
+            scss: {
+                additionalData: `@use "@/assets/Styles/01-base/variables" as *;`
+            }
         }
     },
     build: {
