@@ -21,7 +21,7 @@ cd weather-app
 npm install
 
 change the OpenWeatherMap API key:
-
+ 
 Development
 To run the app in development mode with hot-reload:
 
