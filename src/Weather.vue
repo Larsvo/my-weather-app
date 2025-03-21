@@ -3,8 +3,8 @@ import {computed} from 'vue';
 </script>
 <template>
   <div class="weather" id="Weather">
-    <section class="weather__form">
-      <form @submit.prevent="getWeather">
+    <section class="weather__box">
+      <form class="weather__form" @submit.prevent="getWeather">
         <label class="weather__title" for="zoekveld">Forecast Friend</label>
         <div class="weather__input">
         <input type="text"
