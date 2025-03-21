@@ -16,27 +16,27 @@ npm (usually comes with Node.js)
 Installation
 Clone the repository:
 
-git clone https://github.com/Larsvo/my-weather-app.git
+`git clone https://github.com/Larsvo/my-weather-app.git
 cd weather-app
-npm install
+npm install`
 
 change the OpenWeatherMap API key:
 
 Development
 To run the app in development mode with hot-reload:
 
-vite --host
-
+`vite --host
+`
 Building for Production
 To build the app for production:
 
-npm run build
+`npm run build`
 
 This will generate a dist folder with your production-ready assets.
 Serving the Production Build
 To preview the production build locally:
 
-npm run preview
+`npm run preview`
 
 Usage
 Enter a city name in the search bar
