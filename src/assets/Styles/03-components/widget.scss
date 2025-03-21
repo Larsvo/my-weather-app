@@ -26,6 +26,7 @@
 			position: absolute;
 			right: .5rem;
 			top: 12px;
+		@include transition(.2s ease in-out);
 		}
 	}
 
