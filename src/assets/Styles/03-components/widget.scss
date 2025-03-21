@@ -28,7 +28,7 @@
 			position: absolute;
 			right: .5rem;
 			top: 12px;
-	@include mixins.transition(.2s ease-in-out)
+			@include mixins.transition(.2s ease-in-out)
 		}
 	}
 
@@ -58,7 +58,7 @@
 		flex-direction: column;
 		gap: 1rem;
 		margin: auto;
-		@media ( max-width: 562px) {
+		@media (max-width: 562px) {
 			padding: 1rem;
 		}
 	}

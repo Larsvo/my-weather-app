@@ -81,19 +81,29 @@ export default {
     }
   },
   methods: {
-    async getWeather() {
-      try {
-        const response = await fetch(`${this.url_base}weather?q=${encodeURIComponent(this.query)}&units=metric&APPID=${this.api_key}`);
+    async getWeather() {  // 1. Maakt de functie "asynchroon" voor API calls
+      try {              // 2. Probeer de code uit te voeren
+        // 3. Verstuur API verzoek
+        const response = await fetch(
+            `${this.url_base}weather?q=${encodeURIComponent(this.query)}&units=metric&APPID=${this.api_key}`
+        );
+
+        // 4. Controleer of het verzoek gelukt is.
         if (!response.ok) {
           throw new Error('Geen weer gegevens gevonden');
         }
+
+        // 5. Zet de response om naar JSON formaat
         const data = await response.json();
+
+        // 6. Sla de data op in de component
         this.setResults(data);
-        this.errorMessage = ''; // Reset eventuele eerdere foutmeldingen
-      } catch (error) {
-        console.error('Error fetching weather data:', error);
+        this.errorMessage = ''; // Reset foutmeldingen
+
+      } catch (error) {   // 7. Vang eventuele fouten op
+        console.error('Error:', error);
         this.errorMessage = 'Geen weer gegevens gevonden';
-        this.weather = {}; // Reset weerdata bij een fout
+        this.weather = {}; // Maak weerdata leeg
       }
     },
     translateWeather(englishTerm) {
