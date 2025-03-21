@@ -2,12 +2,16 @@
 	width: 100%;
 	position: relative;
 	display: flex;
+	place-content: center;
+	min-height: 100vh;
+	align-items: center;
+	overflow: hidden;
 
 	&__title {
 		font-size: 1.5rem;
 		font-weight: 600;
 	}
-	
+
 	&__form {
 		display: grid;
 		gap: .5rem
@@ -16,15 +20,15 @@
 	&__input {
 		position: relative;
 		height: max-content;
-		display: block;
+		display: flex;
 
 		> button {
 			position: absolute;
-			right: 0;
+			right: .5rem;
 			top: rem(12);
 		}
 	}
-	
+
 	&__search {
 		width: 100%;
 		height: 2rem;
@@ -40,7 +44,8 @@
 	}
 
 	&__box {
-		width: rem(600);
+		max-width: rem(600);
+		width: 85%;
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 		background-color: rgba(255, 255, 255, 0.4);
 		border-radius: var(--radius);
@@ -49,9 +54,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		@media (max-width: 650px) {
-			width: 100%;
-			padding: 2rem;
+		margin: auto;
+		@media ( max-width: 562px) {
+			padding: 1rem;
 		}
 	}
 
@@ -77,6 +82,7 @@
 
 	&__conditions {
 	}
+
 	&__temperature {
 		font-size: 3rem;
 		font-weight: 900;
