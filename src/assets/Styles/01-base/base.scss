@@ -10,25 +10,38 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+.animated-gradient {
 
+}
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 body {
 	margin: 0;
-	background-image: linear-gradient(
-									15deg,
-									hsl(319deg 60% 35%) 2%,
-									hsl(302deg 41% 38%) 19%,
-									hsl(276deg 35% 47%) 32%,
-									hsl(249deg 38% 55%) 43%,
-									hsl(224deg 53% 56%) 53%,
-									hsl(208deg 72% 49%) 62%,
-									hsl(201deg 100% 44%) 70%,
-									hsl(197deg 100% 45%) 76%,
-									hsl(194deg 100% 45%) 83%,
-									hsl(189deg 100% 44%) 88%,
-									hsl(184deg 100% 42%) 93%,
-									hsl(178deg 100% 42%) 97%,
-									hsl(170deg 72% 56%) 100%
-	);
+	background: linear-gradient(15deg, hsl(319deg 60% 35%) 2%,
+					hsl(302deg 41% 38%) 19%,
+					hsl(276deg 35% 47%) 32%,
+					hsl(249deg 38% 55%) 43%,
+					hsl(224deg 53% 56%) 53%,
+					hsl(208deg 72% 49%) 62%,
+					hsl(201deg 100% 44%) 70%,
+					hsl(197deg 100% 45%) 76%,
+					hsl(194deg 100% 45%) 83%,
+					hsl(189deg 100% 44%) 88%,
+					hsl(184deg 100% 42%) 93%,
+					hsl(170deg 72% 56%) 100%);
+	background-size: 180% 180%;
+	animation: gradient-animation 36s ease infinite;
+
 	> .app {
 
 	}
