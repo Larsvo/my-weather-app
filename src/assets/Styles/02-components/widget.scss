@@ -7,6 +7,18 @@
 		font-size: 1.5rem;
 	}
 
+	&__input {
+		position: relative;
+		height: max-content;
+		display: block;
+
+		> button {
+			position: absolute;
+			right: 0;
+			top: rem(10);
+		}
+	}
+	
 	&__search {
 		width: 100%;
 		height: 2rem;
@@ -30,7 +42,7 @@
 		padding: 2rem 4rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 1rem;
 		@media (max-width: 650px) {
 			width: 100%;
 			padding: 2rem;
@@ -52,7 +64,7 @@
 	}
 
 	&__city {
-
+		margin: 0;
 	}
 
 	&__date {
