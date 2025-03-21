@@ -1,3 +1,5 @@
+@use '../01-base/mixins.scss';
+
 .weather {
 	width: 100%;
 	position: relative;
@@ -26,7 +28,7 @@
 			position: absolute;
 			right: .5rem;
 			top: 12px;
-		@include transition(.2s ease in-out);
+	@include mixins.transition(.2s ease-in-out)
 		}
 	}
 
